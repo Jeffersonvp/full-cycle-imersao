@@ -11,6 +11,7 @@ type Account struct {
 	Base      `valid:"required"`
 	OwnerName string    `json:"owner_name" valid:"notnull"`
 	Bank      *Bank     `valid:"-"`
+	BankID    string    `gorm:"column:bank_id;type:uuid;not null" valid:"-"`
 	Number    string    `json:"number" valid:"notnull"`
 	PixKeys   []*PixKey `valid:"-"`
 }
